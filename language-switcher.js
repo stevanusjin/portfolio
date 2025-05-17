@@ -14,3 +14,11 @@ window.onload = () => {
     document.getElementById('languageSelector').value = 'en';
   }
 };
+
+document.addEventListener('click', function (event) {
+    const languageSelector = document.getElementById('languageSelector');
+    if (!languageSelector.contains(event.target)) {
+      languageSelector.style.display = 'none';
+    }
+  });
+
