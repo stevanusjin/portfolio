@@ -16,18 +16,18 @@ window.onload = () => {
 };
 
 document.addEventListener("DOMContentLoaded", () => {
-  const navLinks = document.querySelectorAll(".nav-menu a");
   const languageSelectorContainer = document.getElementById("languageSelector").parentElement;
 
+  // Select ALL anchor tags that link to sections (both mobile and desktop)
+  const navLinks = document.querySelectorAll('a[href^="#"]');
+
   navLinks.forEach(link => {
-    link.addEventListener("click", (event) => {
+    link.addEventListener("click", () => {
       const href = link.getAttribute("href");
 
       if (href === "#header") {
-        // If Home button is clicked, show the language selector
         languageSelectorContainer.style.display = "block";
       } else {
-        // Otherwise, hide it
         languageSelectorContainer.style.display = "none";
       }
     });
