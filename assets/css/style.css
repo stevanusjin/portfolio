@@ -135,6 +135,19 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
+.language-fixed {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  z-index: 10000;
+}
+
+/* Hide language selector when mobile nav is active */
+.mobile-nav-active .language-fixed {
+  display: none;
+}
+
+
 /*--------------------------------------------------------------
 # Navigation Menu
 --------------------------------------------------------------*/
