@@ -15,22 +15,16 @@ window.onload = () => {
   }
 };
 
-document.addEventListener("DOMContentLoaded", () => {
-  const languageSelectorContainer = document.getElementById("languageSelector").parentElement;
+function hideLangSelector() {
+    var langDiv = document.getElementById("languageWrapper");
+    if (langDiv) {
+      langDiv.style.display = "none";
+    }
+  }
 
-  const navLinks = document.querySelectorAll('a[href^="#"]');
-
-  navLinks.forEach(link => {
-    link.addEventListener("click", () => {
-      const href = link.getAttribute("href");
-
-      setTimeout(() => {
-        if (href === "#header") {
-          languageSelectorContainer.classList.remove("language-switcher-hidden");
-        } else {
-          languageSelectorContainer.classList.add("language-switcher-hidden");
-        }
-      }, 100); // Delay helps ensure the menu has finished collapsing
-    });
-  });
-});
+  function showLangSelector() {
+    var langDiv = document.getElementById("languageWrapper");
+    if (langDiv) {
+      langDiv.style.display = "block";
+    }
+  }
