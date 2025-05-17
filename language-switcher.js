@@ -16,20 +16,21 @@ window.onload = () => {
 };
 
 document.addEventListener("DOMContentLoaded", () => {
-  const navLinks = document.querySelectorAll(".nav-menu a");
   const languageSelectorContainer = document.getElementById("languageSelector").parentElement;
 
+  const navLinks = document.querySelectorAll('a[href^="#"]');
+
   navLinks.forEach(link => {
-    link.addEventListener("click", (event) => {
+    link.addEventListener("click", () => {
       const href = link.getAttribute("href");
 
-      if (href === "#header") {
-        // If Home button is clicked, show the language selector
-        languageSelectorContainer.style.display = "block";
-      } else {
-        // Otherwise, hide it
-        languageSelectorContainer.style.display = "none";
-      }
+      setTimeout(() => {
+        if (href === "#header") {
+          languageSelectorContainer.classList.remove("language-switcher-hidden");
+        } else {
+          languageSelectorContainer.classList.add("language-switcher-hidden");
+        }
+      }, 100); // Delay helps ensure the menu has finished collapsing
     });
   });
 });
