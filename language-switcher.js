@@ -15,10 +15,21 @@ window.onload = () => {
   }
 };
 
-document.addEventListener('click', function (event) {
-    const languageSelector = document.getElementById('languageSelector');
-    if (!languageSelector.contains(event.target)) {
-      languageSelector.style.display = 'none';
-    }
-  });
+document.addEventListener("DOMContentLoaded", () => {
+  const navLinks = document.querySelectorAll(".nav-menu a");
+  const languageSelectorContainer = document.getElementById("languageSelector").parentElement;
 
+  navLinks.forEach(link => {
+    link.addEventListener("click", (event) => {
+      const href = link.getAttribute("href");
+
+      if (href === "#header") {
+        // If Home button is clicked, show the language selector
+        languageSelectorContainer.style.display = "block";
+      } else {
+        // Otherwise, hide it
+        languageSelectorContainer.style.display = "none";
+      }
+    });
+  });
+});
