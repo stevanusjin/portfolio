@@ -133,11 +133,27 @@ h1, h2, h3, h4, h5, h6 {
     flex-direction: column;
     align-items: center;
   }
-  #languageWrapper {
+  #mobileTopBar {
+    display: flex;
     position: fixed;
     top: 10px;
-    right: 60px; /* Move it left to avoid the hamburger icon */
-    z-index: 10001; /* Stay above .mobile-nav (9999) */
+    right: 10px;
+    gap: 10px;
+    align-items: center;
+    z-index: 10001;
+  }
+  #mobileTopBar #languageWrapper {
+    position: static; /* remove fixed so it stays in the flow */
+  }
+  .mobile-nav-toggle {
+    position: static; /* remove fixed so it aligns in flexbox */
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  .mobile-nav-toggle i {
+    color: #fff;
   }
 }
 
@@ -145,6 +161,10 @@ h1, h2, h3, h4, h5, h6 {
 # Navigation Menu
 --------------------------------------------------------------*/
 /* Desktop Navigation */
+#mobileTopBar {
+  display: none;
+}
+
 .nav-menu {
   margin-top: 35px;
 }
