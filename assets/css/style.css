@@ -133,38 +133,12 @@ h1, h2, h3, h4, h5, h6 {
     flex-direction: column;
     align-items: center;
   }
-  #mobileTopBar {
-    display: flex;
-    gap: 10px;
-    position: fixed;
-    top: 10px;
-    right: 10px;
-    align-items: center;
-    z-index: 10001;
-  }
-
-  #languageWrapper {
-    position: static;
-    order: 1;
-  }
-
-  .mobile-nav-toggle {
-    position: static;
-    order: 2;
-  }
 }
 
 /*--------------------------------------------------------------
 # Navigation Menu
 --------------------------------------------------------------*/
 /* Desktop Navigation */
-#mobileTopBar {
-  display: none;
-  justify-content: flex-end;
-  align-items: center;
-  gap: 10px;
-}
-
 .nav-menu {
   margin-top: 35px;
 }
@@ -1158,27 +1132,8 @@ section .container {
   }
 }
 
-#languageWrapper {
-  position: fixed;
-  top: 10px;
-  right: 10px;
-  z-index: 10000; /* Must be higher than .mobile-nav's 9999 */
-}
-
 #languageSelector {
   padding: 5px;
   font-size: 14px;
   cursor: pointer;
-  background: white;
-  color: black;
-  border-radius: 5px;
-  border: none;
-}
-
-/* Optional: Smaller size on mobile */
-@media (max-width: 768px) {
-  #languageSelector {
-    font-size: 12px;
-    padding: 4px;
-  }
 }
